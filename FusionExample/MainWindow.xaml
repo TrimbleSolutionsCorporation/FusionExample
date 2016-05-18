@@ -1,0 +1,28 @@
+﻿<Window x:Class="FusionExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.trimble.com/fusion"
+        Title="Tekla Structures Fusion Example"
+        Width="340" Height="360"
+        WindowStartupLocation="CenterScreen"
+        Style="{DynamicResource Theme.Window.Style}" ResizeMode="NoResize" Icon="ts-ext.ico" Topmost="True">
+  <DockPanel>
+    <StatusBar DockPanel.Dock="Bottom">
+      <TextBlock Text="Not connected" Visibility="{Binding IsConnected, Mode=OneWay, Converter={ui:ConvertBooleanToInverseVisibility}}" />
+      <TextBlock Visibility="{Binding IsConnected, Mode=OneWay, Converter={ui:ConvertBooleanToVisibility}}">
+        <Run Text="Connected to " />
+        <Run Text="{Binding ModelName, Mode=OneWay}" />
+      </TextBlock>
+    </StatusBar>
+    <StackPanel Margin="20" VerticalAlignment="Center">
+      <TextBlock>Here are some example controls:</TextBlock>
+      <Button Command="{ui:CommandHandler ShowMessage}">Click me</Button>
+      <TextBox ui:Extensions.Watermark="Try typing here" />
+      <ComboBox IsEditable="True" ui:Extensions.Watermark="Select an item">
+        <ComboBoxItem>First item</ComboBoxItem>
+        <ComboBoxItem>Second item</ComboBoxItem>
+        <ComboBoxItem>Third item</ComboBoxItem>
+      </ComboBox>
+    </StackPanel>
+  </DockPanel>
+</Window>

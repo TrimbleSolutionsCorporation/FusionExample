@@ -1,28 +1,17 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+bin/
+obj/
+ObjDir/
+packages/
 
-# Precompiled Headers
-*.gch
-*.pch
+_ReSharper*/
+**/target/sonar/
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+Thumbs.db
 
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+*.Cache
+*.DS_Store
+*.GhostDoc.xml
+*.suo
+*.user
+*.userprefs
+*.DotSettings
